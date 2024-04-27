@@ -1,0 +1,6 @@
+[submodule "SUNDAE-viewer"]
+	path = SUNDAE-viewer
+	url = https://github.com/RunyiYang/SUNDAE-viewer
+[submodule "GraphDownsampling"]
+	path = GraphDownsampling
+	url = https://github.com/RunyiYang/GraphDownsampling
