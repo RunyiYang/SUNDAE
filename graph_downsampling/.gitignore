@@ -1,0 +1,48 @@
+# Copyright (C) 2023 Mitsubishi Electric Research Laboratories (MERL).
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# C++ .gitignore from https://github.com/github/gitignore/blob/main/C%2B%2B.gitignore
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Windows default autosave extension
+*.asv
+
+# OSX / *nix default autosave extension
+*.m~
+
+# Custom ignores
+.DS_Store
+
+*.ply

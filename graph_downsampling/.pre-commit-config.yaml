@@ -1,0 +1,26 @@
+# Copyright (C) 2023 Mitsubishi Electric Research Laboratories (MERL)
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Pre-commit configuration. See https://pre-commit.com
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: v1.0.0
+    hooks:
+      - id: check-json5
+
+  - repo: https://github.com/homebysix/pre-commit-macadmin
+    rev: v1.12.3
+    hooks:
+      - id: check-git-config-email
+        args: ['--domains', 'merl.com']

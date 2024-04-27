@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "/DATA_EDS2/zhuzx/Work/3dgs-downsample-backbone/pyFPRC_cpu /sample_point_cloud.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "/DATA_EDS2/zhuzx/Work/3dgs-downsample-backbone/pyFPRC_cpu /data/cubic.ply"
+            ]
+        }
+    ]
+}
