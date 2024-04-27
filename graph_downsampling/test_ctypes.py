@@ -88,7 +88,6 @@ if __name__ == "__main__":
     parser.add_argument("-s", "--save", default="", help="path to save output ply file")
     parser.add_argument("-m", "--mode", default="FPRC", help="sparse or dense")
     parser.add_argument("-d", "--dll_path", default="graphScore/filtergraphv2.so", help="C++ .so file path")
-    parser.add_argument("-w", "--weight", default=0.6, type=float, help="weight for graph downsampling")
     args = parser.parse_args()
 
     t1 = time.time()
@@ -101,9 +100,7 @@ if __name__ == "__main__":
 
     t1 = time.time()
     if args.mode == "FPRC":
-        weight_graph = args.weight
-        idxs = getSampledIndex(pc, args.dll_path, sample_rate, weight_graph)
-        print("Weight graph:", weight_graph)
+        idxs = getSampledIndex(pc, args.dll_path, sample_rate, 1.0)
         print('Time taken to sample: ', time.time() - t1, 'seconds')
         sampled_pc = pcd_origin[idxs]
     elif args.mode == "random":
