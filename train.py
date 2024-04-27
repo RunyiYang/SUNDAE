@@ -97,16 +97,6 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             loss.backward()
             optimizer.step()
             lr_scheduler.step()
-        # if iteration > opt.densify_until_iter*2:
-        #     image = NN_Comp(image.unsqueeze(0)).squeeze(0)
-        #     Ll1 = l1_loss(image, gt_image)
-        #     ssim_loss = 1.0 - ssim(image, gt_image)
-        # s3im_loss = s3im(image.flatten(1), gt_image.flatten(1))
-        
-        # loss = (1.0 - opt.lambda_dssim) * Ll1 + opt.lambda_dssim * ssim_loss
-        # loss.backward()
-        # optimizer.step()
-        # lr_scheduler.step()
         iter_end.record()
 
         with torch.no_grad():
@@ -223,10 +213,10 @@ if __name__ == "__main__":
     parser.add_argument('--port', type=int, default=6009)
     parser.add_argument('--debug_from', type=int, default=-1)
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
-    parser.add_argument("--test_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000, 70000, 80000,90000, 100000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000, 70000, 80000,90000, 100000])
+    parser.add_argument("--test_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000])
     parser.add_argument("--quiet", action="store_true")
-    parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000, 70000, 80000,90000, 100000])
+    parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[18000, 30000, 40000, 50000, 60000])
     parser.add_argument("--start_checkpoint", type=str, default = None)
     parser.add_argument("--no_xyz", type=bool, default=False, help="restore point cloud?")
     parser.add_argument("--ply_dir", type=str, default = None)

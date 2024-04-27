@@ -20,20 +20,26 @@ Recently, 3D Gaussian Splatting, as a novel 3D representation, has garnered atte
 ```
 git clone --recursive git@github.com:RunyiYang/SUNDAE.git
 ```
-## Environment
+### Environment
 ```shell
 conda env create --file environment.yml
-conda activate gaussian_downsampling
+conda activate SUNDAE
 ```
 
-And several C++ libs are required for fast sampling, refer to <a href="graph_downsampling/graphScore/README.md">graphScore/README.md</a>.
+Several C++ libs are required for fast sampling, refer to <a href="[graph_downsampling/graphScore/README.md](https://github.com/RunyiYang/GraphDownsampling/blob/master/README.md)">GraphDownsampling</a>.
+
+```shell
+cd GraphDownsampling/graphScore
+g++ -shared -o filtergraphv2.so pyGraphFilterV2.cpp graphFilter.cpp pccProcessing.cpp -I./ -I/usr/local/include/eigen3/ -O3 -fopenmp -fPIC -Wall
+```
+To enable viewer, please refer to <a href="https://github.com/RunyiYang/SUNDAE-viewer/blob/master/README.md">SUNDAE-Viewer</a>
 
 ## Train
 For MipNeRF360 dataset, different resolutions are used for different scenes. For indoor scenes bonsai, counter, room, stump, use images_2 for training and evaluation. And for rest of the outdoor scenes, use images_4 for training and evaluation.
 
 For example,
 ```
-train_nncomp.py -s <dataset> -i images_4 -m <model_save_path>  --eval --checkpoint_iterations 30000 --sample_rate <float>
+train.py -s <dataset> -i images_4 -m <model_save_path>  --eval --checkpoint_iterations 30000 --sample_rate <float>
 ```
 
 For other datasets, use the default set.
