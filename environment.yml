@@ -1,4 +1,4 @@
-name: gaussian_downsampling
+name: SUNDAE
 channels:
   - pytorch
   - conda-forge
