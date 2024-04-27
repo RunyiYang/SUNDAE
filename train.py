@@ -24,7 +24,7 @@ from utils.image_utils import psnr
 from argparse import ArgumentParser, Namespace
 from arguments import ModelParams, PipelineParams, OptimizationParams
 from torch.utils.tensorboard import SummaryWriter
-from NN_Comp.UNet_old import UNet
+from NN_Comp.UNet import UNet
 # from NN_Comp.swin_unet import SUNet_model
 import yaml
 import pdb

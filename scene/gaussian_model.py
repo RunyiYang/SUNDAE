@@ -21,8 +21,7 @@ from simple_knn._C import distCUDA2
 import time
 from utils.graphics_utils import BasicPointCloud
 from utils.general_utils import strip_symmetric, build_scaling_rotation
-from graph_downsampling.test_ctypes import getSampledIndex
-import pdb
+from GraphDownsampling.test_ctypes import getSampledIndex
 
 class GaussianModel:
 

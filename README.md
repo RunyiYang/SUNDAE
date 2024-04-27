@@ -19,9 +19,6 @@ Recently, 3D Gaussian Splatting, as a novel 3D representation, has garnered atte
 
 ```
 git clone --recursive git@github.com:RunyiYang/SUNDAE.git
-```
-### Environment
-```shell
 conda env create --file environment.yml
 conda activate SUNDAE
 ```
@@ -35,25 +32,21 @@ g++ -shared -o filtergraphv2.so pyGraphFilterV2.cpp graphFilter.cpp pccProcessin
 To enable viewer, please refer to <a href="https://github.com/RunyiYang/SUNDAE-viewer/blob/master/README.md">SUNDAE-Viewer</a>
 
 ## Train
-For MipNeRF360 dataset, different resolutions are used for different scenes. For indoor scenes bonsai, counter, room, stump, use images_2 for training and evaluation. And for rest of the outdoor scenes, use images_4 for training and evaluation.
+For MipNeRF360 dataset, different resolutions are used for different scenes. For indoor scenes, use images_2 for training and evaluation. And for rest of the outdoor scenes, use images_4 for training and evaluation.
+For other datasets, please follow the default setting.
 
 For example,
 ```
 train.py -s <dataset> -i images_4 -m <model_save_path>  --eval --checkpoint_iterations 30000 --sample_rate <float>
 ```
 
-For other datasets, use the default set.
-
-See <a href="bash/run_init.sh"> bash/run_init.sh</a> to fast start.
-
 ## Render
 ```
-CUDA_VISIBLE_DEVICES=0 python render_nncomp.py -m <model_save_path>
+python render.py -m <model_save_path>
 ```
-See <a href="bash/render_init.sh"> bash/render_init.sh</a> to fast start.
-
 ## Evaluation
 ```
-CUDA_VISIBLE_DEVICES=0 python metrics.py -m <model_save_path>
+python metrics.py -m <model_save_path>
 ```
-See <a href="bash/eval_init.sh"> bash/eval_init.sh</a> to fast start.
+## Acknowledgement
+This project is built upon [3DGS](https://github.com/graphdeco-inria/gaussian-splatting). Please follow the license of 3DGS. We thank all the authors for their great work and repos. 

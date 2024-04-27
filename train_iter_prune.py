@@ -24,7 +24,7 @@ from utils.image_utils import psnr
 from argparse import ArgumentParser, Namespace
 from arguments import ModelParams, PipelineParams, OptimizationParams
 from torch.utils.tensorboard import SummaryWriter
-from NN_Comp.UNet_old import UNet
+from NN_Comp.UNet import UNet
 # from NN_Comp.swin_unet import SUNet_model
 import yaml
 import pdb
@@ -249,10 +249,10 @@ if __name__ == "__main__":
     parser.add_argument('--port', type=int, default=6009)
     parser.add_argument('--debug_from', type=int, default=-1)
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
-    parser.add_argument("--test_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000])
+    parser.add_argument("--test_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000])
     parser.add_argument("--quiet", action="store_true")
-    parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000])
+    parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[10000, 15000, 20000, 30000, 40000, 50000, 60000])
     parser.add_argument("--start_checkpoint", type=str, default = None)
     parser.add_argument("--no_xyz", type=bool, default=False, help="restore point cloud?")
     parser.add_argument("--ply_dir", type=str, default = None)
