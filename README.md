@@ -1,6 +1,6 @@
 # SUNDAE: <u>S</u>pectrally Pr<u>un</u>e<u>d</u> G<u>a</u>ussian Fi<u>e</u>lds with Neural Compensation
 
-[[Paper]()] | [[Project Page](https://runyiyang.github.io/projects/SUNDAE/)] | [[3DGS Model]()]
+[[Paper](https://arxiv.org/abs/2405.00676)] | [[Project Page](https://runyiyang.github.io/projects/SUNDAE/)] | [[3DGS Model]()]
 
 This repository is an official implementation for:
 
