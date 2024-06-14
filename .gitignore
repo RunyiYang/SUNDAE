@@ -52,6 +52,9 @@ coverage.xml
 .pytest_cache/
 cover/
 assets/
+train.py
+render.py
+train_iter_prune.py
 
 # Translations
 *.mo
